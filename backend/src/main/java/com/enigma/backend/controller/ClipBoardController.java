@@ -35,7 +35,7 @@ public class ClipBoardController {
 
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/latest")
-    ClipBoard getLatest() {
+    List<ClipBoard> getLatest() {
         return clipBoardService.getLatest();
     }
 }

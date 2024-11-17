@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -37,7 +38,7 @@ public class ClipBoardServiceImpl implements ClipBoardService {
     }
 
     @Override
-    public ClipBoard getLatest() {
-        return clipBoardRepository.getLatest();
+    public List<ClipBoard> getLatest() {
+        return Collections.singletonList(clipBoardRepository.getLatest());
     }
 }

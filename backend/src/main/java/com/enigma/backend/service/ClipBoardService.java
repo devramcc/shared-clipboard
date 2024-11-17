@@ -8,5 +8,5 @@ public interface ClipBoardService {
     ClipBoard create(String type, String clipBoardContent);
     List<ClipBoard> getAll();
     List<ClipBoard> getAllToday();
-    ClipBoard getLatest();
+    List<ClipBoard> getLatest();
 }

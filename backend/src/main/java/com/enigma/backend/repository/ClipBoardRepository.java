@@ -19,12 +19,12 @@ public class ClipBoardRepository {
     }
 
     public List<ClipBoard> getAllClipBoard() {
-        return entityManager.createNativeQuery("SELECT * FROM t_clipboard", ClipBoard.class)
+        return entityManager.createNativeQuery("SELECT * FROM t_clipboard ORDER BY created_at DESC", ClipBoard.class)
                 .getResultList();
     }
 
     public List<ClipBoard> getAllTodayClipBoard() {
-        return entityManager.createNativeQuery("SELECT * FROM t_clipboard WHERE DATE(created_at) = CURRENT_DATE", ClipBoard.class)
+        return entityManager.createNativeQuery("SELECT * FROM t_clipboard WHERE DATE(created_at) = CURRENT_DATE ORDER BY created_at DESC", ClipBoard.class)
                 .getResultList();
     }
 
