@@ -21,6 +21,7 @@ public class ClipBoardController {
         return clipBoardService.create(request.getType(), request.getClipBoardContent());
     }
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping
     List<ClipBoard> getAll() {
         return clipBoardService.getAll();
