@@ -9,4 +9,5 @@ public interface ClipBoardService {
     List<ClipBoard> getAll();
     List<ClipBoard> getAllToday();
     List<ClipBoard> getLatest();
+    Boolean delete(String id);
 }

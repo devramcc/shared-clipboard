@@ -28,6 +28,12 @@ public class ClipBoardRepository {
                 .getResultList();
     }
 
+    public Boolean deleteClipBoard(String id) {
+        return entityManager.createNativeQuery("DELETE FROM t_clipboard WHERE id = :id")
+                .setParameter("id", id)
+                .executeUpdate() > 0;
+    }
+
     public ClipBoard getLatest() {
         return (ClipBoard) entityManager.createNativeQuery("""
                 SELECT * FROM t_clipboard\s

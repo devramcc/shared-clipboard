@@ -38,4 +38,10 @@ public class ClipBoardController {
     List<ClipBoard> getLatest() {
         return clipBoardService.getLatest();
     }
+
+    @CrossOrigin(origins = "http://localhost:5173")
+    @DeleteMapping()
+    Boolean delete(@RequestParam String id) {
+        return clipBoardService.delete(id);
+    }
 }

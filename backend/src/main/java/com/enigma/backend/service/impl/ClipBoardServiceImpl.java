@@ -41,4 +41,10 @@ public class ClipBoardServiceImpl implements ClipBoardService {
     public List<ClipBoard> getLatest() {
         return Collections.singletonList(clipBoardRepository.getLatest());
     }
+
+    @Override
+    @Transactional
+    public Boolean delete(String id) {
+        return clipBoardRepository.deleteClipBoard(id);
+    }
 }
