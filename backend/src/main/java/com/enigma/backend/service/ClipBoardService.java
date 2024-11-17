@@ -7,4 +7,6 @@ import java.util.List;
 public interface ClipBoardService {
     ClipBoard create(String type, String clipBoardContent);
     List<ClipBoard> getAll();
+    List<ClipBoard> getAllToday();
+    ClipBoard getLatest();
 }

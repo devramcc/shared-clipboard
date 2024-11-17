@@ -26,4 +26,16 @@ public class ClipBoardController {
     List<ClipBoard> getAll() {
         return clipBoardService.getAll();
     }
+
+    @CrossOrigin(origins = "http://localhost:5173")
+    @GetMapping("/today")
+    List<ClipBoard> getAllToday() {
+        return clipBoardService.getAllToday();
+    }
+
+    @CrossOrigin(origins = "http://localhost:5173")
+    @GetMapping("/latest")
+    ClipBoard getLatest() {
+        return clipBoardService.getLatest();
+    }
 }

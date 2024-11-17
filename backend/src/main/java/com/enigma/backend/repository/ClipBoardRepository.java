@@ -22,4 +22,18 @@ public class ClipBoardRepository {
         return entityManager.createNativeQuery("SELECT * FROM t_clipboard", ClipBoard.class)
                 .getResultList();
     }
+
+    public List<ClipBoard> getAllTodayClipBoard() {
+        return entityManager.createNativeQuery("SELECT * FROM t_clipboard WHERE DATE(created_at) = CURRENT_DATE", ClipBoard.class)
+                .getResultList();
+    }
+
+    public ClipBoard getLatest() {
+        return (ClipBoard) entityManager.createNativeQuery("""
+                SELECT * FROM t_clipboard\s
+                WHERE DATE(created_at) = CURRENT_DATE\s
+                ORDER BY created_at DESC\s
+                LIMIT 1;
+                """, ClipBoard.class).getSingleResult();
+    }
 }

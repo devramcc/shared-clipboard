@@ -30,4 +30,14 @@ public class ClipBoardServiceImpl implements ClipBoardService {
     public List<ClipBoard> getAll() {
         return clipBoardRepository.getAllClipBoard();
     }
+
+    @Override
+    public List<ClipBoard> getAllToday() {
+        return clipBoardRepository.getAllTodayClipBoard();
+    }
+
+    @Override
+    public ClipBoard getLatest() {
+        return clipBoardRepository.getLatest();
+    }
 }
