@@ -36,9 +36,8 @@ public class ClipBoardRepository {
 
     public ClipBoard getLatest() {
         return (ClipBoard) entityManager.createNativeQuery("""
-                SELECT * FROM t_clipboard\s
-                WHERE DATE(created_at) = CURRENT_DATE\s
-                ORDER BY created_at DESC\s
+                SELECT * FROM t_clipboard
+                ORDER BY created_at DESC
                 LIMIT 1;
                 """, ClipBoard.class).getSingleResult();
     }

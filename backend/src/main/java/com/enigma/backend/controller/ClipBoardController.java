@@ -16,6 +16,7 @@ public class ClipBoardController {
 
     private final ClipBoardService clipBoardService;
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping
     ClipBoard createClipBoard(@RequestBody CreateClipBoardRequest request) {
         return clipBoardService.create(request.getType(), request.getClipBoardContent());
