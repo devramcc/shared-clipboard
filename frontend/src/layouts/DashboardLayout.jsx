@@ -17,7 +17,7 @@ export default function DashboardLayout() {
       <div
         className={`${
           isOpen ? "w-5/6 sm:w-80" : "w-0"
-        } bg-primary-content rounded-lg shadow-lg transition-all duration-300 ease-in-out transform ${
+        } bg-secondary-content rounded-lg shadow-lg transition-all duration-300 ease-in-out transform ${
           isOpen ? "" : "-translate-x-full"
         }`}
         style={{
