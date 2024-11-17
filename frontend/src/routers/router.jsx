@@ -9,8 +9,24 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <DashboardPage />,
-      }
+        element: (
+          <DashboardPage requestPath={"http://localhost:8080/api/clipboard"} />
+        ),
+      },
+      {
+        path: "latest",
+        element: (
+          <DashboardPage
+            requestPath={"http://localhost:8080/api/clipboard/latest"}
+          />
+        ),
+      },
+      {
+        path: "today",
+        element: (
+          <DashboardPage requestPath={"http://localhost:8080/api/clipboard/today"} />
+        ),
+      },
     ],
   },
 ]);
