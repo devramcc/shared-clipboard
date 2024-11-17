@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
+import FloatingActionButton from "../components/FloatingActionButton";
+import ClipBoardModal from "../components/ClipBoardModal";
 
 export default function DashboardLayout() {
   const [isOpen, setIsOpen] = useState(true);
@@ -24,8 +26,10 @@ export default function DashboardLayout() {
       >
         {isOpen && <SideBar />}
       </div>
-      <div className="flex-grow flex flex-col transition-all duration-300 ease-in-out">
+      <div className="flex-grow flex flex-col gap-2 transition-all duration-300 ease-in-out">
         <Header toggleSideBar={toggleSideBar} />
+        <FloatingActionButton />
+        <ClipBoardModal />
         <Outlet />
       </div>
     </div>
